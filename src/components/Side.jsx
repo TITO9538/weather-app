@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
 import axios from "axios";
 import { FaLocationDot } from "react-icons/fa6";
+import FadeContent from "./reactBits/FadeContent";
 
 export function Side({ place, setPlace, forecast, tempC, formatDateLabel }) {
   const [modalOn, setModalOn] = useState(false);
@@ -70,23 +71,29 @@ export function Side({ place, setPlace, forecast, tempC, formatDateLabel }) {
                 alt="Cloud-background"
                 className="opacity-10 absolute top-0"
               />
-              <img
-                src={`../../weather/${forecast[0].weather[0].icon}.png`}
-                alt=""
-                className="w-30 mt-10"
-              />
+              <FadeContent blur={true} duration={500} easing="ease-out" initialOpacity={0}>
+                <img
+                  src={`../../weather/${forecast[0].weather[0].icon}.png`}
+                  alt=""
+                  className="w-30 mt-10"
+                />
+              </FadeContent>
             </div>
           </div>
           {/* Temperature */}
           <div className="w-full h-30 flex items-center justify-center mt-30 md:mt-30">
             <h3 className="text-8xl md:text-9xl dark:text-[#e7e7eb] text-white transition-colors duration-500">
-              {tempC
-                ? Math.round(forecast[0].main.temp)
-                : Math.round((forecast[0].main.temp * 9) / 5 + 32)}
+              <FadeContent blur={true} duration={500} easing="ease-out" initialOpacity={0}>
+                {tempC
+                  ? Math.round(forecast[0].main.temp)
+                  : Math.round((forecast[0].main.temp * 9) / 5 + 32)}
+              </FadeContent>
             </h3>
             <div className="flex dark:text-[#9f9eb0] text-slate-300 font-light mt-3 transition-colors duration-500">
-              <div className="text-2xl md:text-3xl mt-2">°</div>
-              <span className="text-6xl md:text-7xl">{tempC ? "c" : "f"}</span>
+              <FadeContent blur={true} duration={600} easing="ease-out" initialOpacity={0} className="flex">
+                <div className="text-2xl md:text-3xl mt-2">°</div>
+                <span className="text-6xl md:text-7xl">{tempC ? "c" : "f"}</span>
+              </FadeContent>
             </div>
           </div>
           {/* Status */}
@@ -107,26 +114,13 @@ export function Side({ place, setPlace, forecast, tempC, formatDateLabel }) {
           <div className="flex items-center justify-center gap-2 mt-8">
             <img src="../../location_on.svg" alt="location_on" className="w-5 hidden dark:block" />
             <FaLocationDot className="text-white dark:hidden"></FaLocationDot>
-            <p className="dark:text-[#88869D] text-slate-300 font-mono text-sm font-bold transition-colors duration-500">{place.name}</p>
+            <p className="dark:text-[#88869D] text-slate-300 font-mono text-sm font-bold transition-colors duration-500">
+              {place.name}
+            </p>
           </div>
         </div>
       ) : (
         //LOADING... Side page
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <div className="w-full h-screen md:h-full flex flex-col dark:bg-[#1e213a] bg-[#44497a]">
           {/* Search btn */}
