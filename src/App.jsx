@@ -10,6 +10,15 @@ export default function App() {
   const [forecast, setForecast] = useState([]);
   const [tempC, setTempC] = useState(true);
 
+  function formatDateLabel(dt_txt) {
+    const date = new Date(dt_txt);
+    const options = { weekday: "short", day: "numeric", month: "short" };
+    const formatted = date.toLocaleDateString("en-US", options);
+    const [weekday, rest] = formatted.split(", ");
+    const [month, day] = rest.split(" ");
+    return `${weekday}, ${day} ${month}`;
+  }
+
   useEffect(() => {
     const defaultPlace = {
       id: 1,
@@ -31,9 +40,7 @@ export default function App() {
     if (lat !== null && lon !== null) {
       async function fetchForecast() {
         try {
-          const response = await axios.get(
-            `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=ff3246395da186b92ded203dae155fc8&units=metric`
-          );
+          const response = await axios.get(`/api/openWeather?lat=${lat}&lon=${lon}`);
 
           const forecastData = response.data.list;
 
@@ -86,8 +93,8 @@ export default function App() {
   return (
     <>
       <div className="font-sans flex flex-col md:flex-row">
-        <Side place={place} setPlace={setPlace} forecast={forecast} tempC={tempC}></Side>
-        <Details forecast={forecast} setTempC={setTempC} tempC={tempC}></Details>
+        <Side formatDateLabel={formatDateLabel} place={place} setPlace={setPlace} forecast={forecast} tempC={tempC}></Side>
+        <Details formatDateLabel={formatDateLabel} forecast={forecast} setTempC={setTempC} tempC={tempC}></Details>
       </div>
     </>
   );

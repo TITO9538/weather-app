@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Details({ forecast, tempC, setTempC }) {
+export default function Details({ forecast, tempC, setTempC, formatDateLabel }) {
   const [loading, setLoading] = useState(true)
 
   function getWindDirection(deg) {
@@ -67,7 +67,7 @@ export default function Details({ forecast, tempC, setTempC }) {
               </div>
             </article>
             <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
-              <p>Tomorrow</p>
+              <p>{forecast.length > 0 ? formatDateLabel(forecast[2].dt_txt) : ""}</p>
               <img
                 src={`../../weather/${forecast[2].weather[0].icon}.png`}
                 alt=""
@@ -89,7 +89,7 @@ export default function Details({ forecast, tempC, setTempC }) {
               </div>
             </article>
             <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
-              <p>Tomorrow</p>
+              <p>{forecast.length > 0 ? formatDateLabel(forecast[3].dt_txt) : ""}</p>
               <img
                 src={`../../weather/${forecast[3].weather[0].icon}.png`}
                 alt=""
@@ -111,7 +111,7 @@ export default function Details({ forecast, tempC, setTempC }) {
               </div>
             </article>
             <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
-              <p>Tomorrow</p>
+              <p>{forecast.length > 0 ? formatDateLabel(forecast[4].dt_txt) : ""}</p>
               <img
                 src={`../../weather/${forecast[4].weather[0].icon}.png`}
                 alt=""
@@ -133,7 +133,7 @@ export default function Details({ forecast, tempC, setTempC }) {
               </div>
             </article>
             <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
-              <p>Tomorrow</p>
+              <p>{forecast.length > 0 ? formatDateLabel(forecast[5].dt_txt) : ""}</p>
               <img
                 src={`../../weather/${forecast[5].weather[0].icon}.png`}
                 alt=""

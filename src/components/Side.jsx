@@ -2,26 +2,17 @@ import React, { useEffect, useState } from "react";
 import Modal from "./Modal";
 import axios from "axios";
 
-export function Side({ place, setPlace, forecast, tempC }) {
+export function Side({ place, setPlace, forecast, tempC, formatDateLabel }) {
   const [modalOn, setModalOn] = useState(false);
   const [locBtn, setLocBtn] = useState(0);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   setTimeout(() => {
-    setLoading(false)
+    setLoading(false);
   }, 1000);
 
   function toggleModal() {
     setModalOn(!modalOn);
-  }
-
-  function formatDateLabel(dt_txt) {
-    const date = new Date(dt_txt);
-    const options = { weekday: "short", day: "numeric", month: "short" };
-    const formatted = date.toLocaleDateString("en-US", options);
-    const [weekday, rest] = formatted.split(", ");
-    const [month, day] = rest.split(" ");
-    return `${weekday}, ${day} ${month}`;
   }
 
   function locationBtn() {
@@ -32,7 +23,7 @@ export function Side({ place, setPlace, forecast, tempC }) {
     if (locBtn <= 0) return;
     async function fetchLocation() {
       try {
-        const response = await axios.get("https://ipinfo.io/json?token=2d2b9151ed1eaa");
+        const response = await axios.get("/api/ipinfo");
         const loc = response.data.loc;
         console.log(response);
 
@@ -86,19 +77,19 @@ export function Side({ place, setPlace, forecast, tempC }) {
             </div>
           </div>
           {/* Temperature */}
-          <div className="w-full h-30 flex items-center justify-center mt-10 md:mt-30">
-            <h3 className="text-9xl text-[#e7e7eb]">
+          <div className="w-full h-30 flex items-center justify-center mt-30 md:mt-30">
+            <h3 className="text-8xl md:text-9xl text-[#e7e7eb]">
               {tempC
                 ? Math.round(forecast[0].main.temp)
                 : Math.round((forecast[0].main.temp * 9) / 5 + 32)}
             </h3>
             <div className="flex text-[#9f9eb0] font-light mt-3">
-              <div className="text-3xl mt-2">°</div>
-              <span className="text-7xl">{tempC ? "c" : "f"}</span>
+              <div className="text-2xl md:text-3xl mt-2">°</div>
+              <span className="text-6xl md:text-7xl">{tempC ? "c" : "f"}</span>
             </div>
           </div>
           {/* Status */}
-          <div className="w-full flex items-center justify-center mt-15 text-[#9f9eb0] md:mt-20">
+          <div className="w-full flex items-center justify-center mt-5 text-[#9f9eb0] md:mt-20">
             <h3 className="text-3xl capitalize font-medium">
               {forecast[0].weather[0].description}
             </h3>
@@ -118,7 +109,6 @@ export function Side({ place, setPlace, forecast, tempC }) {
           </div>
         </div>
       ) : (
-
         //LOADING... Side page
         <div className="w-full h-screen md:h-full flex flex-col bg-[#1e213a]">
           {/* Search btn */}
@@ -128,8 +118,7 @@ export function Side({ place, setPlace, forecast, tempC }) {
               className="text-gray-200 font-extralight text-lg bg-[#6e707a] px-[20px] py-[4px] hover:bg-[#9093a0]">
               Search for Places
             </button>
-            <div
-              className="bg-[#4b4d61] rounded-full p-2 cursor-pointer hover:scale-110 transition-transform">
+            <div className="bg-[#4b4d61] rounded-full p-2 cursor-pointer hover:scale-110 transition-transform">
               <img src="../../location.svg" alt="location" className="w-7" />
             </div>
           </div>
@@ -150,17 +139,12 @@ export function Side({ place, setPlace, forecast, tempC }) {
           </div>
           {/* Temperature */}
           <div className="w-full h-22 flex items-center justify-center mt-10 md:mt-30">
-            <h3 className="text-9xl text-[#e7e7eb]">
-
-            </h3>
-            <div className="flex text-[#9f9eb0] font-light mt-3">
-            </div>
+            <h3 className="text-9xl text-[#e7e7eb]"></h3>
+            <div className="flex text-[#9f9eb0] font-light mt-3"></div>
           </div>
           {/* Status */}
           <div className="w-full flex items-center justify-center mt-15 text-[#9f9eb0] md:mt-20">
-            <h3 className="text-3xl capitalize font-medium animate-pulse opacity-20">
-              Weather
-            </h3>
+            <h3 className="text-3xl capitalize font-medium animate-pulse opacity-20">Weather</h3>
           </div>
           {/* Fecha */}
           <div className="w-full flex items-center justify-center text-[#88869D] mt-10 md:mt-15">
@@ -171,7 +155,9 @@ export function Side({ place, setPlace, forecast, tempC }) {
           {/* Location */}
           <div className="flex items-center justify-center gap-2 mt-8">
             <img src="../../location_on.svg" alt="location_on" className="w-5" />
-            <p className="text-[#88869D] font-mono text-sm font-bold animate-pulse opacity-20">Location</p>
+            <p className="text-[#88869D] font-mono text-sm font-bold animate-pulse opacity-20">
+              Location
+            </p>
           </div>
         </div>
       )}
