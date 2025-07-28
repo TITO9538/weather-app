@@ -47,7 +47,7 @@ export default function Details({ forecast, tempC, setTempC }) {
             <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <p>Tomorrow</p>
               <img
-                src={`../../public/weather/${forecast[1].weather[0].icon}.png`}
+                src={`../../weather/${forecast[1].weather[0].icon}.png`}
                 alt=""
                 className="h-15"
               />
@@ -69,7 +69,7 @@ export default function Details({ forecast, tempC, setTempC }) {
             <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <p>Tomorrow</p>
               <img
-                src={`../../public/weather/${forecast[2].weather[0].icon}.png`}
+                src={`../../weather/${forecast[2].weather[0].icon}.png`}
                 alt=""
                 className="h-15"
               />
@@ -91,7 +91,7 @@ export default function Details({ forecast, tempC, setTempC }) {
             <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <p>Tomorrow</p>
               <img
-                src={`../../public/weather/${forecast[3].weather[0].icon}.png`}
+                src={`../../weather/${forecast[3].weather[0].icon}.png`}
                 alt=""
                 className="h-15"
               />
@@ -113,7 +113,7 @@ export default function Details({ forecast, tempC, setTempC }) {
             <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <p>Tomorrow</p>
               <img
-                src={`../../public/weather/${forecast[4].weather[0].icon}.png`}
+                src={`../../weather/${forecast[4].weather[0].icon}.png`}
                 alt=""
                 className="h-15"
               />
@@ -135,7 +135,7 @@ export default function Details({ forecast, tempC, setTempC }) {
             <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <p>Tomorrow</p>
               <img
-                src={`../../public/weather/${forecast[5].weather[0].icon}.png`}
+                src={`../../weather/${forecast[5].weather[0].icon}.png`}
                 alt=""
                 className="h-15"
               />
@@ -172,7 +172,7 @@ export default function Details({ forecast, tempC, setTempC }) {
                   <span
                     className="flex justify-center items-center w-8 h-8 m-3 rounded-full bg-[#ffffff4d]"
                     style={{ transform: `rotate(${forecast[0].wind.deg}deg)` }}>
-                    <img src="../../public/navigation.svg" alt="" className="w-[50%]" />
+                    <img src="../../navigation.svg" alt="" className="w-[50%]" />
                   </span>
                   {getWindDirection(forecast[0].wind.deg)}
                 </div>
@@ -245,35 +245,35 @@ export default function Details({ forecast, tempC, setTempC }) {
           <section className="grid grid-cols-2 w-fit mx-auto gap-5 mt-5 md:max-w-2xl md:flex md:flex-row md:flex-wrap md:gap-4 md:w-fit md:mx-10">
             <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
-                src={`../../public/weather/03d.png`}
+                src={`../../weather/03d.png`}
                 alt=""
                 className="h-15 opacity-20"
               />
             </article>
             <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
-                src={`../../public/weather/03d.png`}
+                src={`../../weather/03d.png`}
                 alt=""
                 className="h-15 opacity-20"
               />
             </article>
             <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
-                src={`../../public/weather/03d.png`}
+                src={`../../weather/03d.png`}
                 alt=""
                 className="h-15 opacity-20"
               />
             </article>
             <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
-                src={`../../public/weather/03d.png`}
+                src={`../../weather/03d.png`}
                 alt=""
                 className="h-15 opacity-20"
               />
             </article>
             <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
-                src={`../../public/weather/03d.png`}
+                src={`../../weather/03d.png`}
                 alt=""
                 className="h-15 opacity-20"
               />

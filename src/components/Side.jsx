@@ -79,7 +79,7 @@ export function Side({ place, setPlace, forecast, tempC }) {
                 className="opacity-10 absolute top-0"
               />
               <img
-                src={`../../public/weather/${forecast[0].weather[0].icon}.png`}
+                src={`../../weather/${forecast[0].weather[0].icon}.png`}
                 alt=""
                 className="w-30 mt-10"
               />
@@ -113,7 +113,7 @@ export function Side({ place, setPlace, forecast, tempC }) {
           </div>
           {/* Location */}
           <div className="flex items-center justify-center gap-2 mt-8">
-            <img src="../../public/location_on.svg" alt="location_on" className="w-5" />
+            <img src="../../location_on.svg" alt="location_on" className="w-5" />
             <p className="text-[#88869D] font-mono text-sm font-bold">{place.name}</p>
           </div>
         </div>
@@ -142,7 +142,7 @@ export function Side({ place, setPlace, forecast, tempC }) {
                 className="opacity-10 absolute top-0"
               />
               <img
-                src={`../../public/weather/03d.png`}
+                src={`../../weather/03d.png`}
                 alt=""
                 className="w-30 mt-10 animate-pulse opacity-20"
               />
@@ -170,7 +170,7 @@ export function Side({ place, setPlace, forecast, tempC }) {
           </div>
           {/* Location */}
           <div className="flex items-center justify-center gap-2 mt-8">
-            <img src="../../public/location_on.svg" alt="location_on" className="w-5" />
+            <img src="../../location_on.svg" alt="location_on" className="w-5" />
             <p className="text-[#88869D] font-mono text-sm font-bold animate-pulse opacity-20">Location</p>
           </div>
         </div>
