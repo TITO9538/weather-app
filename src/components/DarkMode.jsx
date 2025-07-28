@@ -34,11 +34,11 @@ export function DarkMode() {
         <button
           onClick={toggleTheme}
           aria-label="Toggle Theme"
-          className="hover:scale-110 transition-transform duration-300 p-2 cursor-pointer bg-[#e6e9fe] dark:bg-transparent rounded-full">
+          className="hover:scale-110 transition-transform duration-300 p-2 cursor-pointer bg-transparent rounded-full">
           {isDark ? (
-            <FaSun className="w-8 h-8 text-slate-300" />
+            <FaSun className="w-7 h-7 text-slate-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]"/>
           ) : (
-            <FaMoon className="w-7 h-7 text-[#44497a]" />
+            <FaMoon className="w-7 h-7 text-slate-200 drop-shadow-[0_0_3px_rgba(68,73,122,0.8)]"/>
           )}
         </button>
       </FadeContent>
