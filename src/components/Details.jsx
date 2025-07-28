@@ -16,35 +16,35 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
   return (
     <>
       {forecast && !loading && forecast.length > 0 ? (
-        <main className="w-full h-full flex flex-col items-center justify-center bg-[#100e1d]">
+        <main className="w-full h-full flex flex-col items-center justify-center dark:bg-[#100e1d] bg-[#e6e9fe] transition-colors duration-500">
           <section className="w-full">
-            <div className="flex items-center justify-end gap-5 m-5">
+            <div className="flex items-center justify-end gap-5 m-5 transition-all duration-500">
               <button
                 onClick={() => {
                   setTempC(true);
                 }}
                 className={`w-10 h-10 flex items-center justify-center text-xl font-semibold ${
-                  tempC ? "text-[#110E3C] bg-[#E7E7EB]" : "text-[#E7E7EB] bg-[#585676]"
+                  tempC ? "text-[#efeeff] bg-[#44497a] dark:text-[#110E3C] dark:bg-[#E7E7EB]" : "dark:text-[#E7E7EB] dark:bg-[#585676]"
                 } rounded-full cursor-pointer hover:scale-110 transition-transform`}>
-                <div className="pr-1 flex">
-                  <p className="text-sm mb-1">°</p>C
-                </div>
+                <h3 className="pr-1 flex">
+                  °C
+                </h3>
               </button>
               <button
                 onClick={() => {
                   setTempC(false);
                 }}
                 className={`w-10 h-10 flex items-center justify-center text-xl font-semibold ${
-                  tempC ? "text-[#E7E7EB] bg-[#585676]" : "text-[#110E3C] bg-[#E7E7EB]"
+                  tempC ? "dark:text-[#E7E7EB] dark:bg-[#585676]" : "text-[#efeeff] bg-[#44497a] dark:text-[#110E3C] dark:bg-[#E7E7EB]"
                 } rounded-full cursor-pointer hover:scale-110 transition-transform`}>
-                <div className="pr-1 flex">
-                  <p className="text-sm mb-1">°</p>F
-                </div>
+                <h3 className="pr-1 flex">
+                  °F
+                </h3>
               </button>
             </div>
           </section>
           <section className="grid grid-cols-2 w-fit mx-auto gap-5 mt-2 md:max-w-2xl md:flex md:flex-row md:flex-wrap md:gap-4 md:w-fit md:mx-10">
-            <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
+            <article className="w-[7.5rem] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium transition-colors duration-500">
               <p>Tomorrow</p>
               <img
                 src={`../../weather/${forecast[1].weather[0].icon}.png`}
@@ -66,7 +66,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
                 </p>
               </div>
             </article>
-            <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
+            <article className="w-[7.5rem] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium transition-colors duration-500">
               <p>{forecast.length > 0 ? formatDateLabel(forecast[2].dt_txt) : ""}</p>
               <img
                 src={`../../weather/${forecast[2].weather[0].icon}.png`}
@@ -88,7 +88,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
                 </p>
               </div>
             </article>
-            <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
+            <article className="w-[7.5rem] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium transition-colors duration-500">
               <p>{forecast.length > 0 ? formatDateLabel(forecast[3].dt_txt) : ""}</p>
               <img
                 src={`../../weather/${forecast[3].weather[0].icon}.png`}
@@ -110,7 +110,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
                 </p>
               </div>
             </article>
-            <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
+            <article className="w-[7.5rem] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium transition-colors duration-500">
               <p>{forecast.length > 0 ? formatDateLabel(forecast[4].dt_txt) : ""}</p>
               <img
                 src={`../../weather/${forecast[4].weather[0].icon}.png`}
@@ -132,7 +132,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
                 </p>
               </div>
             </article>
-            <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
+            <article className="w-[7.5rem] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium transition-colors duration-500">
               <p>{forecast.length > 0 ? formatDateLabel(forecast[5].dt_txt) : ""}</p>
               <img
                 src={`../../weather/${forecast[5].weather[0].icon}.png`}
@@ -155,12 +155,12 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
               </div>
             </article>
           </section>
-          <section className="w-full max-w-sm px-5 mt-12 md:w-full md:max-w-none md:m-auto md:flex md:flex-col md:items-center md:justify-center mb-10 md:mb-10">
-            <h3 className="h-7 text-[#E7E7EB] text-2xl font-bold my-5 md:w-full md:max-w-2xl md:text-left">
+          <section className="w-full max-w-sm px-5 mt-12 md:w-full md:max-w-none md:m-auto md:flex md:flex-col md:items-center md:justify-center mb-10 md:mb-10 transition-colors duration-500">
+            <h3 className="h-7 dark:text-[#E7E7EB] text-[#1e1e2b] text-2xl font-bold my-5 md:w-full md:max-w-2xl md:text-left transition-colors duration-500">
               Today`s Hightlights
             </h3>
             <div className="w-full flex flex-col items-center md:grid md:grid-cols-2  gap-5 md:gap-6 md:max-w-2xl">
-              <article className="w-full max-w-[328px] h-48 bg-[#1E213A] flex flex-col items-center justify-center">
+              <article className="w-full max-w-[328px] h-48 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center transition-colors duration-500">
                 <h2 className="text-medium text-base text-center text-[#E7E7EB]">Wind status</h2>
                 <div className="flex items-end h-20 mb-4">
                   <h3 className="text-[#E7E7EB] text-6xl font-bold">
@@ -177,7 +177,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
                   {getWindDirection(forecast[0].wind.deg)}
                 </div>
               </article>
-              <article className="w-full max-w-[328px] h-48 bg-[#1E213A] flex flex-col items-center justify-center">
+              <article className="w-full max-w-[328px] h-48 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center transition-colors duration-500">
                 <h3 className="text-medium text-base text-center text-[#E7E7EB]">Humidity</h3>
                 <div className="flex items-end h-20 mb-4">
                   <h3 className=" text-[#E7E7EB] text-6xl font-bold">
@@ -197,7 +197,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
                 </div>
                 <div className="w-[70%] text-right font-bold text-[#A09FB1]">%</div>
               </article>
-              <article className=" w-full max-w-[328px] flex flex-col items-center justify-center bg-[#1E213A] py-4">
+              <article className=" w-full max-w-[328px] flex flex-col items-center justify-center dark:bg-[#1E213A] bg-[#44497a] py-4 transition-colors duration-500">
                 <h2 className="text-medium text-base text-center text-[#E7E7EB]">Visibility</h2>
                 <div className="flex items-end h-20 mb-4">
                   <h3 className="text-[#E7E7EB] text-6xl font-bold">
@@ -208,7 +208,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
                   <h4 className="text-[#E7E7EB] text-4xl mb-2 ml-1">{tempC ? `km` : `miles`}</h4>
                 </div>
               </article>
-              <article className="w-full max-w-[328px] flex flex-col items-center justify-center bg-[#1E213A] p-4">
+              <article className="w-full max-w-[328px] flex flex-col items-center justify-center dark:bg-[#1E213A] bg-[#44497a] p-4 transition-colors duration-500">
                 <h2 className="text-medium text-base text-center text-[#E7E7EB]">Air Pressure</h2>
                 <div className="flex items-end h-20 mb-4">
                   <h3 className="text-[#E7E7EB] text-6xl font-bold">{forecast[0].main.pressure}</h3>
@@ -217,7 +217,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
               </article>
             </div>
           </section>
-          <div className="pb-5 w-full flex flex-row justify-center items-center text-[#A09FB1] ">
+          <div className="pb-5 w-full flex flex-row justify-center items-center dark:text-[#A09FB1] text-[#323144] ">
             <h4 className="text-sm font-medium text-center">Created by</h4>
             <h2 className="font-bold text-sm text-center mx-1">ThomasMonzon</h2>
           </div>
@@ -227,7 +227,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
         //LOADING Pagina Details... 
         <main className="w-full h-full flex flex-col items-center justify-center bg-[#100e1d]">
           <section className="w-full">
-            <div className="flex items-center justify-end gap-5 m-5 mt-8">
+            <div className="flex items-center justify-end gap-5 m-5">
               <button
                 className={`w-10 h-10 flex items-center justify-center text-xl font-semibold text-[#E7E7EB] bg-[#585676] rounded-full cursor-pointer hover:scale-110 transition-transform`}>
                 <div className="pr-1 flex">
@@ -242,7 +242,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
               </button>
             </div>
           </section>
-          <section className="grid grid-cols-2 w-fit mx-auto gap-5 mt-5 md:max-w-2xl md:flex md:flex-row md:flex-wrap md:gap-4 md:w-fit md:mx-10">
+          <section className="grid grid-cols-2 w-fit mx-auto gap-5 mt-2 md:max-w-2xl md:flex md:flex-row md:flex-wrap md:gap-4 md:w-fit md:mx-10">
             <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
                 src={`../../weather/03d.png`}

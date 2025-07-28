@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Side } from "./components/Side";
 import Details from "./components/Details";
 import axios from "axios";
+import { DarkMode } from "./components/DarkMode";
 
 export default function App() {
   const [place, setPlace] = useState([]);
@@ -92,9 +93,10 @@ export default function App() {
 
   return (
     <>
-      <div className="font-sans flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row transition-colors duration-500">
         <Side formatDateLabel={formatDateLabel} place={place} setPlace={setPlace} forecast={forecast} tempC={tempC}></Side>
         <Details formatDateLabel={formatDateLabel} forecast={forecast} setTempC={setTempC} tempC={tempC}></Details>
+        <DarkMode></DarkMode>
       </div>
     </>
   );
