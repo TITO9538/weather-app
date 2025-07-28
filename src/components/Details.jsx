@@ -18,7 +18,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
       {forecast && !loading && forecast.length > 0 ? (
         <main className="w-full h-full flex flex-col items-center justify-center bg-[#100e1d]">
           <section className="w-full">
-            <div className="flex items-center justify-end gap-5 m-5 mt-8">
+            <div className="flex items-center justify-end gap-5 m-5">
               <button
                 onClick={() => {
                   setTempC(true);
@@ -43,7 +43,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
               </button>
             </div>
           </section>
-          <section className="grid grid-cols-2 w-fit mx-auto gap-5 mt-5 md:max-w-2xl md:flex md:flex-row md:flex-wrap md:gap-4 md:w-fit md:mx-10">
+          <section className="grid grid-cols-2 w-fit mx-auto gap-5 mt-2 md:max-w-2xl md:flex md:flex-row md:flex-wrap md:gap-4 md:w-fit md:mx-10">
             <article className="w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <p>Tomorrow</p>
               <img
