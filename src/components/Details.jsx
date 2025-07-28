@@ -225,7 +225,7 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
       ) : (
 
         //LOADING Pagina Details... 
-        <main className="w-full h-full flex flex-col items-center justify-center bg-[#100e1d]">
+        <main className="w-full h-full flex flex-col items-center justify-center dark:bg-[#100e1d] bg-[#e6e9fe]">
           <section className="w-full">
             <div className="flex items-center justify-end gap-5 m-5">
               <button
@@ -243,35 +243,35 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
             </div>
           </section>
           <section className="grid grid-cols-2 w-fit mx-auto gap-5 mt-2 md:max-w-2xl md:flex md:flex-row md:flex-wrap md:gap-4 md:w-fit md:mx-10">
-            <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
+            <article className="animate-pulse w-[7.5rem] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
                 src={`../../weather/03d.png`}
                 alt=""
                 className="h-15 opacity-20"
               />
             </article>
-            <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
+            <article className="animate-pulse w-[7.5rem] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
                 src={`../../weather/03d.png`}
                 alt=""
                 className="h-15 opacity-20"
               />
             </article>
-            <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
+            <article className="animate-pulse w-[7.5rem] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
                 src={`../../weather/03d.png`}
                 alt=""
                 className="h-15 opacity-20"
               />
             </article>
-            <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
+            <article className="animate-pulse w-[7.5rem] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
                 src={`../../weather/03d.png`}
                 alt=""
                 className="h-15 opacity-20"
               />
             </article>
-            <article className="animate-pulse w-[7.5rem] h-40 bg-[#1E213A] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
+            <article className="animate-pulse w-[7.5rem] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center gap-3 text-[#E7E7EB] text-base font-medium">
               <img
                 src={`../../weather/03d.png`}
                 alt=""
@@ -280,20 +280,20 @@ export default function Details({ forecast, tempC, setTempC, formatDateLabel }) 
             </article>
           </section>
           <section className="w-full max-w-sm px-5 mt-12 md:w-full md:max-w-none md:m-auto md:flex md:flex-col md:items-center md:justify-center mb-10 md:mb-10">
-            <h3 className="h-7 text-[#afafafa4] text-2xl font-bold my-5 md:w-full md:max-w-2xl md:text-left">
+            <h3 className="h-7 dark:text-[#afafafa4] text-[#1e1e2b] text-2xl font-bold my-5 md:w-full md:max-w-2xl md:text-left">
               Today`s Hightlights
             </h3>
             <div className="w-full flex flex-col items-center md:grid md:grid-cols-2  gap-5 md:gap-6 md:max-w-2xl text-2xl font-bold">
-              <article className="animate-pulse w-full max-w-[328px] h-40 bg-[#1E213A] flex flex-col items-center justify-center">
+              <article className="animate-pulse w-full max-w-[328px] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center">
                 <h2 className="text-medium text-center text-[#E7E7EB] animate-pulse opacity-20">Wind status</h2>
               </article>
-              <article className="animate-pulse w-full max-w-[328px] h-40 bg-[#1E213A] flex flex-col items-center justify-center">
+              <article className="animate-pulse w-full max-w-[328px] h-40 dark:bg-[#1E213A] bg-[#44497a] flex flex-col items-center justify-center">
                 <h3 className="text-medium text-center text-[#E7E7EB] animate-pulse opacity-20">Humidity</h3>
               </article>
-              <article className="animate-pulse w-full max-w-[328px] h-40 flex flex-col items-center justify-center bg-[#1E213A] py-4">
+              <article className="animate-pulse w-full max-w-[328px] h-40 flex flex-col items-center justify-center dark:bg-[#1E213A] bg-[#44497a] py-4">
                 <h2 className="text-medium text-center text-[#E7E7EB] animate-pulse opacity-20">Visibility</h2>
               </article>
-              <article className="animate-pulse w-full max-w-[328px] h-40 flex flex-col items-center justify-center bg-[#1E213A] p-4">
+              <article className="animate-pulse w-full max-w-[328px] h-40 flex flex-col items-center justify-center dark:bg-[#1E213A] bg-[#44497a] p-4">
                 <h2 className="text-medium text-center text-[#E7E7EB] animate-pulse opacity-20">Air Pressure</h2>
               </article>
             </div>
