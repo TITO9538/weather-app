@@ -23,7 +23,7 @@ export function Side({ place, setPlace, forecast, tempC, formatDateLabel }) {
     if (locBtn <= 0) return;
     async function fetchLocation() {
       try {
-        const response = await axios.get("https://ipinfo.io/json?token=TU_TOKEN");
+        const response = await axios.get("https://ipinfo.io/json?token=2d2b9151ed1eaa");
         const loc = response.data.loc;
         console.log(response);
 
