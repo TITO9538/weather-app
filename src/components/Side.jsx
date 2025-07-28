@@ -65,7 +65,7 @@ export function Side({ place, setPlace, forecast, tempC, formatDateLabel }) {
           </div>
           {/* Clouds */}
           <div className="w-full flex items-center justify-center">
-            <div className="flex items-center justify-center w-105 relative">
+            <div className="flex items-center justify-center w-105 h-37 relative">
               <img
                 src="../../others/Cloud-background.png"
                 alt="Cloud-background"
