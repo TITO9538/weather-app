@@ -150,8 +150,8 @@ export function Side({ place, setPlace, forecast, tempC, formatDateLabel }) {
             </div>
           </div>
           {/* Temperature */}
-          <div className="w-full h-22 flex items-center justify-center mt-10 md:mt-30">
-            <h3 className="text-9xl dark:text-[#e7e7eb] text-white"></h3>
+          <div className="w-full h-35 flex items-center justify-center mt-10 md:mt-30">
+            <h3 className="text-9xl text-transparent">10</h3>
             <div className="flex text-[#9f9eb0] font-light mt-3"></div>
           </div>
           {/* Status */}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import AnimatedContent from "./reactBits/AnimatedContent";
+import FadeContent from "./reactBits/FadeContent";
 
 export function DarkMode() {
   const [isDark, setIsDark] = useState(() => {
@@ -28,33 +29,19 @@ export function DarkMode() {
   const toggleTheme = () => setIsDark(!isDark);
 
   return (
-    <>
-      <AnimatedContent
-        distance={150}
-        direction="verical"
-        reverse={false}
-        duration={1.2}
-        ease="power3.out"
-        initialOpacity={0.2}
-        animateOpacity
-        scale={1.1}
-        threshold={0.2}
-        delay={1.5}>
+    <div className="fixed bottom-3 right-3 z-50">
+      <FadeContent delay={1500} blur={true} duration={500} easing="ease-out" initialOpacity={0}>
         <button
           onClick={toggleTheme}
           aria-label="Toggle Theme"
-          className="fixed bottom-2 right-2 hover:scale-110 transition-transform duration-300 p-2 cursor-pointer">
-          {/* MOON ICON */}
-          <div className={`p-2 bg-[#e6e9fe] rounded-full ${isDark ? "hidden" : "inline-block"}`}>
-            <FaMoon className={`w-8 h-8 ${isDark ? "hidden" : "inline-block"} text-[#44497a]`} />
-          </div>
-
-          {/* SUN ICON */}
-          <div className={`p-2 ${!isDark ? "hidden" : "inline-block"}`}>
-            <FaSun className={`w-8 h-8 ${isDark ? "inline-block" : "hidden"} text-slate-500`} />
-          </div>
+          className="hover:scale-110 transition-transform duration-300 p-2 cursor-pointer bg-[#e6e9fe] dark:bg-transparent rounded-full">
+          {isDark ? (
+            <FaSun className="w-8 h-8 text-slate-300" />
+          ) : (
+            <FaMoon className="w-7 h-7 text-[#44497a]" />
+          )}
         </button>
-      </AnimatedContent>
-    </>
+      </FadeContent>
+    </div>
   );
 }
