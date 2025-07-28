@@ -65,13 +65,13 @@ export function Side({ place, setPlace, forecast, tempC, formatDateLabel }) {
           </div>
           {/* Clouds */}
           <div className="w-full flex items-center justify-center">
-            <div className="flex items-center justify-center w-105 h-37 relative">
+            <div className="flex items-center justify-center w-105 h-36 relative">
               <img
                 src="../../others/Cloud-background.png"
                 alt="Cloud-background"
                 className="opacity-10 absolute top-0"
               />
-              <FadeContent blur={true} duration={500} easing="ease-out" initialOpacity={0}>
+              <FadeContent blur={true} duration={400} easing="ease-out" initialOpacity={0}>
                 <img
                   src={`../../weather/${forecast[0].weather[0].icon}.png`}
                   alt=""
@@ -90,7 +90,12 @@ export function Side({ place, setPlace, forecast, tempC, formatDateLabel }) {
               </FadeContent>
             </h3>
             <div className="flex dark:text-[#9f9eb0] text-slate-300 font-light mt-3 transition-colors duration-500">
-              <FadeContent blur={true} duration={600} easing="ease-out" initialOpacity={0} className="flex">
+              <FadeContent
+                blur={true}
+                duration={600}
+                easing="ease-out"
+                initialOpacity={0}
+                className="flex">
                 <div className="text-2xl md:text-3xl mt-2">°</div>
                 <span className="text-6xl md:text-7xl">{tempC ? "c" : "f"}</span>
               </FadeContent>
@@ -99,24 +104,44 @@ export function Side({ place, setPlace, forecast, tempC, formatDateLabel }) {
           {/* Status */}
           <div className="w-full flex items-center justify-center mt-5 dark:text-[#9f9eb0] text-slate-300 md:mt-20 transition-colors duration-500">
             <h3 className="text-3xl capitalize font-medium">
-              {forecast[0].weather[0].description}
+              <FadeContent blur={true} duration={600} easing="ease-out" initialOpacity={0}>
+                {forecast[0].weather[0].description}
+              </FadeContent>
             </h3>
           </div>
           {/* Fecha */}
           <div className="w-full flex items-center justify-center dark:text-[#88869D] text-slate-300 mt-10 md:mt-15 transition-colors duration-500">
-            <div className="w-35 flex items-center justify-between text-sm">
-              <span>Today</span>
-              <span>.</span>
-              <span>{forecast.length > 0 ? formatDateLabel(forecast[0].dt_txt) : ""}</span>
+            <div className="w-35 text-sm">
+              <FadeContent
+                className="flex items-center justify-between"
+                blur={true}
+                duration={700}
+                easing="ease-out"
+                initialOpacity={0}>
+                <span>Today</span>
+                <span>.</span>
+                <span>{forecast.length > 0 ? formatDateLabel(forecast[0].dt_txt) : ""}</span>
+              </FadeContent>
             </div>
           </div>
           {/* Location */}
-          <div className="flex items-center justify-center gap-2 mt-8">
-            <img src="../../location_on.svg" alt="location_on" className="w-5 hidden dark:block" />
-            <FaLocationDot className="text-white dark:hidden"></FaLocationDot>
-            <p className="dark:text-[#88869D] text-slate-300 font-mono text-sm font-bold transition-colors duration-500">
-              {place.name}
-            </p>
+          <div className="mt-8">
+            <FadeContent
+              className="flex items-center justify-center gap-2 "
+              blur={true}
+              duration={800}
+              easing="ease-out"
+              initialOpacity={0}>
+              <img
+                src="../../location_on.svg"
+                alt="location_on"
+                className="w-5 hidden dark:block"
+              />
+              <FaLocationDot className="text-white dark:hidden"></FaLocationDot>
+              <p className="dark:text-[#88869D] text-slate-300 font-mono text-sm font-bold transition-colors duration-500">
+                {place.name}
+              </p>
+            </FadeContent>
           </div>
         </div>
       ) : (
